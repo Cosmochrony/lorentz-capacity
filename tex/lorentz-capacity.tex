@@ -1,7 +1,7 @@
 % Technical note: O7 saturation parameter and Lorentz factor from projective capacity.
 % Status: sections 1-3 established; section 4 contains the open convergence lemma
-% anchored to Q5b/Q11; section 5 is an algebraic corollary.
-% Dependencies: Beau2026a7 (O7), Beau2026q5b, Beau2026q11, Beau2026c (BI).
+% anchored to Q5b/Q11; section 5 proves the linear law analytically; section 6 is a conditional corollary.
+% Dependencies: Beau2026a11 (O7), Beau2026q5b, Beau2026q11, Beau2026c (BI).
 
 \documentclass[11pt]{article}
 \usepackage{amsmath,amsthm,amssymb}
@@ -22,22 +22,27 @@ from Projective Capacity Saturation}
   \maketitle
 
   \begin{abstract}
-    The O-series saturation parameter $\eta_n^{\mathrm{O7}}$ is defined in~\cite{Beau2026a7}
-    as the ratio of cumulative occupied projective capacity to residual frontier novelty.
-    We show that this ratio is not an arbitrary fitting variable: under the
+    The O-series saturation parameter $\eta_n^{\mathrm{O7}}$ is defined in~\cite{Beau2026a11}
+    as the ratio of cumulative occupied projective capacity to total residual frontier novelty.
+    The analytic factorization proved below explains why this total
+    ratio satisfies a linear filling law $B_n + \Sigma_n^{\mathrm{tot}} = 1$ and does not
+    by itself yield the Lorentz factor:
+    $\omega_q(a,b,c) = e^{2\pi ic/q}\omega_q(a,b,0)$, so the central
+    coordinate $c$ contributes only a global phase and is invisible to the fingerprint span.
+    We identify the conditional mechanism by which a temporally projected residual
+    $\Sigma_n^\tau := \mathcal{P}_\tau^{\mathrm{Q5b}}\,\Sigma_n^{\mathrm{tot}}$
+    can produce the relativistic mobility ratio: under the
     Born--Infeld admissibility budget established in~\cite{Beau2026c}, a quadratic
-    normalization of the two capacity components implies
-    $\eta_n^{\mathrm{O7}} \to \beta\gamma$,
+    normalization of $B_n$ and $\Sigma_n^\tau$ implies
+    \[
+      \eta_n^\tau := \frac{B_n}{\Sigma_n^\tau} \longrightarrow \beta\gamma,
+    \]
     where $\beta\gamma$ is the relativistic mobility and $\gamma$ is the Lorentz factor.
-    Consequently, the O-series profile $\Phi(\eta) = 1/\sqrt{1+\eta^2}$ converges to
-    $1/\gamma$: the inverse Lorentz factor is the residual-capacity profile of the
-    admissible spectral cascade.
-    The quadratic normalization is not postulated; it is expected to follow from the
-    Carnot--Carath\'eodory continuum geometry and co-metric closure established
-    in~\cite{Beau2026q5b,Beau2026q11}.
-    The main convergence lemma, identifying the O7 observables as the normalized
-    components of the Born--Infeld budget, is stated precisely and left as the
-    remaining technical task.
+    Consequently, $\Phi(\eta_n^\tau) = 1/\sqrt{1+(\eta_n^\tau)^2}$ converges to $1/\gamma$.
+    The temporal projection operator $\mathcal{P}_\tau^{\mathrm{Q5b}}$ is induced by the
+    Carnot--Carath\'eodory geometry and co-metric closure of~\cite{Beau2026q5b,Beau2026q11}.
+    Constructing this operator and verifying $\mathcal{P}_\tau^{\mathrm{Q5b}}\Sigma_n^{\mathrm{tot}}
+    \to \sqrt{1-B_n^2}$ is the remaining technical task.
   \end{abstract}
 
   \tableofcontents
@@ -46,7 +51,7 @@ from Projective Capacity Saturation}
   \section{O7 occupation and residual novelty}
     \label{sec:o7}
 
-    The O7 saturation parameter is defined in~\cite{Beau2026a7} by
+    The O7 saturation parameter is defined in~\cite{Beau2026a11} by
     \[
       \eta_n^{\mathrm{O7}}(x)
       =
@@ -123,160 +128,412 @@ from Projective Capacity Saturation}
     The inverse Lorentz factor is the residual-capacity profile of a quadratic
     Born--Infeld budget.
     This step is purely algebraic.
-    The non-trivial question is whether the O7 observables $B_n$ and $\Sigma_n$
-    converge to the two normalized components of this budget.
+    The non-trivial question is whether the O7 total residual $\Sigma_n$ contains
+    a temporal component $\Sigma_n^\tau$ that converges to the normalized temporal
+    budget component $\sqrt{1-\beta^2}$.
 
   \section{Why the reduced filling model is insufficient}
     \label{sec:linear}
 
-    The reduced filling model of~\cite{Beau2026a7} gives, before geometric correction,
+    The reduced filling model of~\cite{Beau2026a11} gives, before geometric correction,
     \[
       B_n \simeq \frac{n}{D},
       \qquad
       \Sigma_n \simeq 1 - \frac{n}{D},
     \]
     equivalently $B_n + \Sigma_n \simeq 1$.
-    This is a linear residual law.
-    It describes monotone filling of a finite resolution cell but does not produce
-    the Lorentzian residual factor.
-    Indeed, setting $B_n \to \beta$ in the linear model would give
-    $\Sigma_n \to 1-\beta$,
-    whereas the Born--Infeld mobility budget requires $\Sigma_n \to \sqrt{1-\beta^2}$.
+    This is a linear residual law, describing monotone filling of a finite
+    resolution cell.
 
-    The linear filling model therefore captures the monotone occupation mechanism
-    but not the continuum geometric correction responsible for the Lorentzian
-    square root.
-    The required structure is the quadratic residual law
-    \[
-      B_n^2 + \Sigma_n^2 \to 1.
-    \]
-    Under the identification $B_n \to \beta$, this gives $\Sigma_n \to \sqrt{1-\beta^2}$.
+    \paragraph{Numerical confirmation.}
+      Direct computation on $\operatorname{Heis}_3(\mathbb{Z}/q\mathbb{Z})$ for
+      $q \in \{7, 11, 13\}$, using cumulative $(a,b)$ spatial coverage for $B_n$ and
+      the total residual Weil-representation span for $\Sigma_n^{\mathrm{tot}}$,
+      yields mean deviations:
+      \[
+        |B_n + \Sigma_n^{\mathrm{tot}} - 1| \approx 0.02\text{--}0.04,
+        \qquad
+        |B_n^2 + (\Sigma_n^{\mathrm{tot}})^2 - 1| \approx 0.17\text{--}0.26.
+      \]
+      The data confirm the linear law for the total residual.
+      The quadratic law fails by a factor of approximately $1/\sqrt{1-B_n^2}$ relative
+      to the linear law, indicating that $\Sigma_n^{\mathrm{tot}}$ is too small by this
+      factor to be the Lorentzian residual.
+
+    \paragraph{Interpretation.}
+      The O7 total residual $\Sigma_n^{\mathrm{tot}}$ measures total Weil-space
+      coverage and satisfies $B_n + \Sigma_n^{\mathrm{tot}} \simeq 1$.
+      The Lorentzian residual factor $\sqrt{1-\beta^2}$ is not obtained from
+      $\Sigma_n^{\mathrm{tot}}$ directly.
+      It requires projecting $\Sigma_n^{\mathrm{tot}}$ onto the \emph{temporal
+  component} selected by the Q5b principal-symbol geometry:
+      \[
+        \Sigma_n^\tau := \mathcal{P}_\tau^{\mathrm{Q5b}}\,\Sigma_n^{\mathrm{tot}},
+      \]
+      where $\mathcal{P}_\tau^{\mathrm{Q5b}}$ is the temporal residual projection
+      induced by the completed effective co-metric.
+      The corrected quadratic target is
+      \[
+        B_n^2 + (\Sigma_n^\tau)^2 \longrightarrow 1.
+      \]
 
   \section{From linear filling to quadratic normalization via Q5b}
-    \label{sec:q5b}
+  \label{sec:q5b}
 
-    \subsection{Q5b input}
+  \subsection{Q5b input}
 
-      The reduced filling model operates at the combinatorial level of a finite
-      resolution cell.
-      The Q5b continuum limit supplies the missing geometric structure~\cite{Beau2026q5b}.
+    The reduced filling model operates at the combinatorial level of a finite
+    resolution cell.
+    The Q5b continuum limit supplies the missing geometric structure~\cite{Beau2026q5b}.
 
-      In the pre-saturation large-$q$ regime, BFS shells on
-      $\operatorname{Heis}_3(\mathbb{Z}/q\mathbb{Z})$ converge to
-      Carnot--Carath\'eodory balls on $\operatorname{Heis}_3(\mathbb{R})$.
-      The linear residual law of the reduced model is a coarse filling approximation
-      valid at finite $D$ and finite $q$; it does not encode the sub-Riemannian
-      anisotropy of the CC geometry.
+    In the pre-saturation large-$q$ regime, BFS shells on
+    $\operatorname{Heis}_3(\mathbb{Z}/q\mathbb{Z})$ converge to
+    Carnot--Carath\'eodory balls on $\operatorname{Heis}_3(\mathbb{R})$.
+    The linear residual law of the reduced model is a coarse filling approximation
+    valid at finite $D$ and finite $q$; it does not encode the sub-Riemannian
+    anisotropy of the CC geometry.
 
-      The effective co-metric extracted from the completed principal-symbol geometry
-      of the admissibility operator is Lorentzian in the homogeneous regime.
-      After the Q11 co-metric closure~\cite{Beau2026q11}, the normalized co-metric is
+    The effective co-metric extracted from the completed principal-symbol geometry
+    of the admissibility operator is Lorentzian in the homogeneous regime.
+    Assuming the Q11 co-metric closure~\cite{Beau2026q11}, the normalized co-metric is
+    \[
+      g^{\mu\nu} = 2\,\eta^{\mu\nu}, \qquad \eta = \mathrm{diag}(-1,+1,+1,+1),
+    \]
+    with no free parameter.
+    This Lorentzian structure provides the quadratic normalization in which the
+    continuum admissible components are to be read, replacing the linear complement
+    of the reduced filling model.
+    The remaining task is to identify the O7 observables with these normalized
+    components.
+
+    The chain is therefore:
+    \begin{align*}
+      &\text{CC convergence (Q5b)} &&\Rightarrow&&
+      \text{continuum spatial and temporal components exist,}\\
+      &\text{principal symbol / Q11 closure} &&\Rightarrow&&
+      \text{temporal projection operator } \mathcal{P}_\tau^{\mathrm{Q5b}} \text{ defined,}\\
+      &\text{Lemma~\ref{lem:main}} &&\Rightarrow&&
+      B_n^2 + (\mathcal{P}_\tau^{\mathrm{Q5b}}\Sigma_n^{\mathrm{tot}})^2 \to 1.
+    \end{align*}
+    The geometric structure is not postulated; it comes from Q5b and Q11.
+    The remaining task is to construct $\mathcal{P}_\tau^{\mathrm{Q5b}}$ explicitly
+    and verify that the normalized temporal component extracted from
+    $\Sigma_n^{\mathrm{tot}}$ converges to $\sqrt{1-B_n^2}$.
+
+  \subsection{Main convergence lemma}
+
+    \begin{definition}[Q5b temporal residual projection]
+      \label{def:q5b-temporal-projection}
+      Let $\Sigma_n^{\mathrm{tot}}$ denote the O7 total residual frontier novelty,
+      viewed in the large-$q$ limit as a residual section of the continuum
+      admissible capacity bundle over the Q5b Carnot limit.
+      The Q5b temporal residual projection is the component map
       \[
-        g^{\mu\nu} = 2\,\eta^{\mu\nu}, \qquad \eta = \mathrm{diag}(-1,+1,+1,+1),
+        \mathcal{P}_\tau^{\mathrm{Q5b}} : \Sigma_n^{\mathrm{tot}} \mapsto \Sigma_n^\tau
       \]
-      with no free parameter.
-      This Lorentzian structure imposes a quadratic normalization on the effective
-      admissible components in the continuum limit — replacing the linear complement
-      of the reduced filling model.
+      induced by the completed effective co-metric $g^{\mu\nu} = 2\,\eta^{\mu\nu}$
+      of~\cite{Beau2026q5b,Beau2026q11}.
+      It is defined by projecting the total residual admissible capacity onto the
+      component orthogonal, in the completed Lorentzian co-metric, to the occupied
+      spatial component $B_n$.
 
-      The chain is therefore:
-      \begin{align*}
-        &\text{CC convergence (Q5b)} &&\Rightarrow&&
-        \text{continuum spatial and temporal components exist,}\\
-        &\text{principal symbol / Q11 closure} &&\Rightarrow&&
-        \text{quadratic normalization of effective components,}\\
-        &\text{observable identification (Lemma~\ref{lem:main})} &&\Rightarrow&&
-        B_n^2 + \Sigma_n^2 \to 1.
-      \end{align*}
-      The geometric structure is not postulated; it comes from Q5b and Q11.
-      The remaining task is the third step: showing that the O7 observables $B_n$
-      and $\Sigma_n$ are precisely the normalized projections of the spatially occupied
-      and temporally residual components of the continuum budget.
+      The direction identified as \emph{temporal} here is temporal only after the chain
+      \[
+        \text{Carnot structure}
+        \;\to\;
+        \text{symbol completion}
+        \;\to\;
+        \text{Q11 co-metric closure}
+        \;\to\;
+        g^{\mu\nu} = 2\,\eta^{\mu\nu}.
+      \]
+      $\mathcal{P}_\tau^{\mathrm{Q5b}}$ is therefore \emph{not} the naive projector
+      onto the central direction of the sub-Laplacian $\Delta_H$; the central
+      direction $Z$ appears at sub-principal / Carnot degree~2 via $[X,Y]=Z$,
+      and becomes a metric temporal direction only after co-metric completion.
+    \end{definition}
 
-    \subsection{Main convergence lemma}
+    \begin{lemma}[Quadratic residual component]
+      \label{lem:main}
+      In the homogeneous pre-saturation regime, let $B_n(x) := |\psi_n(x)|^2$
+      be the O7 cumulative occupation observable and $\Sigma_n^{\mathrm{tot}}(x)$
+      the O7 total residual frontier novelty~\cite{Beau2026a11}.
+      Direct computation confirms the linear filling law:
+      \[
+        B_n + \Sigma_n^{\mathrm{tot}} \simeq 1.
+      \]
+      Let $\Sigma_n^\tau := \mathcal{P}_\tau^{\mathrm{Q5b}}\,\Sigma_n^{\mathrm{tot}}$
+      be the temporal component of Definition~\ref{def:q5b-temporal-projection}.
+      The decomposition
+      \[
+        \Sigma_n^{\mathrm{tot}} = \Sigma_n^{\mathrm{spat}} \oplus \Sigma_n^\tau
+      \]
+      induced by the completed co-metric separates the total residual into spatial
+      and temporal components.
+      If the Q5b observable identification sends $B_n$ to the normalized spatial
+      component of the completed Born--Infeld budget, then
+      \[
+        B_n^2 + (\Sigma_n^\tau)^2 \longrightarrow 1,
+      \]
+      equivalently $\Sigma_n^\tau \to \sqrt{1-\beta^2}$, where
+      \[
+        \beta := \frac{dI_{\mathrm{space}}}{c_{\mathrm{BI}}\,dn}
+      \]
+      is the normalized spectral mobility, represented after physical normalization
+      $c_{\mathrm{BI}} \mapsto c$ as $v_{\mathrm{eff}}/c$.
+    \end{lemma}
 
-      \begin{lemma}[O7 observables as normalized CC budget components]
-        \label{lem:main}
-        Let $B_n(x) := |\psi_n(x)|^2 = |S_n \cap C_x|/|C_x|$ be the O7 cumulative
-        occupation observable, and let $\Sigma_n(x)$ be the O7 residual frontier
-        novelty~\cite{Beau2026a7}.
-        In the pre-saturation large-$q$ regime, under the Q5b BFS-to-CC convergence
-        and the Q11 homogeneous co-metric closure, these observables converge to the
-        normalized spatial and temporal components of the Born--Infeld mobility budget:
-        \[
-          B_n \longrightarrow \beta,
-          \qquad
-          \Sigma_n \longrightarrow \sqrt{1-\beta^2},
-        \]
-        where $\beta = v_{\mathrm{eff}}/c_{\mathrm{BI}}$ is the normalized projected spectral mobility.
-        Equivalently,
-        \[
-          B_n^2 + \Sigma_n^2 \longrightarrow 1.
-        \]
-      \end{lemma}
+    The remaining work follows the decomposition chain:
+    \begin{align*}
+      &\Sigma_n^{\mathrm{tot}} \quad \text{(O7 total residual)}\\
+      &\quad \downarrow \quad \text{Q5b decomposition of admissible components}\\
+      &\Sigma_n^{\mathrm{tot}} = \Sigma_n^{\mathrm{spat}} \oplus \Sigma_n^\tau\\
+      &\quad \downarrow \quad \text{BI/Q11 normalization}\\
+      &B_n^2 + (\Sigma_n^\tau)^2 \to 1.
+    \end{align*}
+    This is an identification between the O7 total observable and the Q5b/Q11
+    geometric decomposition, not a new geometric conjecture.
 
-      The remaining work is the observable-identification step.
-      Q5b provides the continuum quadratic geometry.
-      O7 provides the occupied-over-residual observables.
-      The lemma asserts that these two descriptions refer to the same normalized
-      capacity components in the common large-$q$, pre-saturation regime.
+  \section{Weil factorization and the invisibility of the central direction}
+  \label{sec:weil-factorization}
+
+  \subsection{The Schr\"odinger representation and its factorization}
+
+    The Schr\"odinger (Weil) representation of $\operatorname{Heis}_3(\mathbb{Z}/q\mathbb{Z})$
+    acts on $\ell^2(\mathbb{Z}/q\mathbb{Z}) \cong \mathbb{C}^q$ by
+    \[
+      [\omega_q(a,b,c)\,\psi](x)
+      =
+      e^{2\pi i(c+ax)/q}\,\psi(x+b \bmod q).
+    \]
+
+    \begin{proposition}[Central factorization]
+      \label{prop:factorization}
+      For all $(a,b,c) \in \operatorname{Heis}_3(\mathbb{Z}/q\mathbb{Z})$,
+      \[
+        \omega_q(a,b,c) = e^{2\pi ic/q}\cdot\omega_q(a,b,0).
+      \]
+    \end{proposition}
+
+    \begin{proof}
+      Direct from the formula: $[\omega_q(a,b,c)\psi](x) = e^{2\pi ic/q}\cdot e^{2\pi iax/q}\psi(x+b)
+      = e^{2\pi ic/q}\cdot [\omega_q(a,b,0)\psi](x)$.
+    \end{proof}
+
+  \subsection{Consequence: central direction is invisible to span}
+
+    Proposition~\ref{prop:factorization} has an immediate corollary for the fingerprint span.
+
+    \begin{corollary}[Linear filling law]
+      \label{cor:linear}
+      The span of $\{\omega_q(g) : g \in \bigcup_{k \leq n} S_k\}$ in
+      $\operatorname{End}(\mathbb{C}^q)$ depends only on the projected $(a,b)$ coordinates:
+      \[
+        \operatorname{span}\{\omega_q(a,b,c)\}
+        =
+        \operatorname{span}\{\omega_q(a,b,0)\}.
+      \]
+      The span dimension at depth $n$ equals the number of distinct $(a,b)$ pairs in
+      $\bigcup_{k \leq n} S_k$.
+      On $\operatorname{Heis}_3(\mathbb{Z}/q\mathbb{Z})$ with generators
+      $\{(\pm1,0,0),(0,\pm1,0)\}$, the BFS explores the $L^1$ ball on
+      $(\mathbb{Z}/q\mathbb{Z})^2$:
+      \[
+        B_n
+        =
+        \frac{|\{(a,b) : \min(a,q-a)+\min(b,q-b) \leq n\}|}{q^2}
+        =
+        \frac{2n^2+2n+1}{q^2}
+        \quad (n < q/2),
+      \]
+      and the total residual novelty satisfies:
+      \[
+        \Sigma_n^{\mathrm{tot}} = 1 - B_n.
+      \]
+    \end{corollary}
+
+    The linear law $B_n + \Sigma_n^{\mathrm{tot}} = 1$ is therefore \emph{exact} in the
+    Schr\"odinger representation, not an approximation.
+    The central coordinate $c$ is invisible to the fingerprint span: it contributes only
+    a global phase $e^{2\pi ic/q}$, which does not change the span direction.
+
+  \subsection{Why this does not obstruct the Lorentz identification}
+
+    The factorization shows that the temporal direction required by the Lorentz
+    identification is \emph{not} directly visible in the Schr\"odinger representation.
+    This is expected: in Carnot--Carath\'eodory geometry, the central direction $Z$
+    appears at degree~2 via the bracket $[X,Y] = Z$, not at degree~1 alongside the
+    horizontal generators.
+    It becomes a metric temporal direction only after the symbol completion chain
+    \[
+      \text{CC structure}
+      \;\to\;
+      \text{sub-principal symbol correction}
+      \;\to\;
+      \text{Q11 co-metric closure}
+      \;\to\;
+      g^{\mu\nu} = 2\,\eta^{\mu\nu}.
+    \]
+    Consequently, the projection $\mathcal{P}_\tau^{\mathrm{Q5b}}$ of
+    Definition~\ref{def:q5b-temporal-projection} does \emph{not} act on the
+    Schr\"odinger representation space $\mathbb{C}^q$ directly.
+    It acts on the \emph{capacity functional} $\Sigma_n^{\mathrm{tot}}$ viewed as a
+    section of the admissible capacity bundle over the Q5b Carnot limit, projecting
+    onto the component induced by the completed co-metric.
+
+    The factorization result therefore clarifies the structure of the remaining proof:
+    one must go beyond the Schr\"odinger representation and work at the level of the
+    Q5b principal-symbol geometry to extract the temporal residual $\Sigma_n^\tau$.
+
+  \section{Numerical tests for candidates of \texorpdfstring{$\Sigma_n^\tau$}{Sigma\_n\^{}tau}}
+  \label{sec:numerical}
+
+  \subsection{Setup and candidates}
+
+    The Weil factorization of Section~\ref{sec:weil-factorization} identifies the
+    central coordinate $c$ as invisible to the fingerprint span.
+    The projection $\mathcal{P}_\tau^{\mathrm{Q5b}}$ must therefore extract the
+    temporal residual from outside the Schr\"odinger representation.
+    To probe what kind of observable could fill this role, we test three natural
+    candidates on $\operatorname{Heis}_3(\mathbb{Z}/q\mathbb{Z})$ for
+    $q \in \{11,13,17\}$.
+
+    With $B_n = (2n^2+2n+1)/q^2$ (proved in Section~\ref{sec:weil-factorization}),
+    the candidates are:
+
+    \begin{itemize}
+      \item $\Sigma_n^A$ : residual $c$-value coverage,
+      $1 - |\{c : \exists(a,b),\,(a,b,c)\in\bigcup_{k\leq n}S_k\}|/q$.
+      This is the fraction of central values not yet reached by the BFS.
+      \item $\Sigma_n^B = \sqrt{1-B_n}$ :
+      the square-root complement of spatial coverage.
+      By construction it satisfies $B_n + (\Sigma_n^B)^2 = 1$, so it serves
+      as a reference for the ``half-linear'' law.
+      \item $\Sigma_n^C = \sqrt{1-\beta_n^2}$ with $\beta_n = n/n_{\max}$ :
+      the velocity-proxy complement, where $\beta_n$ is the normalized BFS depth.
+    \end{itemize}
+
+    For each candidate $\Sigma_n^X$ we measure the quadratic sum
+    $B_n^2 + (\Sigma_n^X)^2$ and compare to~$1$.
+
+  \subsection{Results}
+
+    Table~\ref{tab:candidates} reports the mean deviation
+    $\langle|B_n^2+(\Sigma_n^X)^2-1|\rangle$ over mid-range depths.
+
+    \begin{table}[h]
+      \centering
+      \begin{tabular}{r|ccc}
+        \hline
+        $q$ & $\Sigma_n^A$ ($c$-coverage) & $\Sigma_n^B$ ($\sqrt{1-B}$) &
+        $\Sigma_n^C$ (depth proxy) \\
+        \hline
+        11 & 0.450 & 0.142 & 0.075 \\
+        13 & 0.460 & 0.137 & 0.076 \\
+        17 & 0.474 & 0.132 & 0.078 \\
+        \hline
+      \end{tabular}
+      \caption{Mean $|B_n^2+(\Sigma_n^X)^2-1|$ over mid-range BFS depths.
+      All candidates fail the quadratic law.}
+      \label{tab:candidates}
+    \end{table}
+
+    \paragraph{$\Sigma_n^A$ ($c$-coverage).}
+      Deviation $\approx 45\text{--}47\%$: largest failure.
+      The central coordinate $c$ saturates at depth $n \approx q/2$ (all $q$
+      values of $c$ are covered by mid-cascade), while $B_n$ is still near~$0.5$.
+      The two observables run on incompatible scales.
+
+    \paragraph{$\Sigma_n^B = \sqrt{1-B_n}$.}
+      Satisfies $B_n + (\Sigma_n^B)^2 = 1$ exactly by construction, but the
+      \emph{quadratic} sum deviates by $\approx 13\%$.
+      This is because $B_n^2 + (1-B_n) = 1 - B_n(1-B_n) \neq 1$ unless $B_n \in
+  \{0,1\}$.
+      It confirms that $B_n + \Sigma^2 = 1$ and $B_n^2 + \Sigma^2 = 1$ are
+      genuinely different conditions.
+
+    \paragraph{$\Sigma_n^C = \sqrt{1-\beta_n^2}$ with $\beta_n = n/n_{\max}$.}
+      Closest to the quadratic law ($\approx 7\text{--}8\%$ deviation), with
+      $B_n^2 + (\Sigma_n^C)^2 \approx 1.004$ near $\beta_n = 0.5$.
+      However, the sum rises to $\approx 1.18$ near $\beta_n = 0.8$ before
+      returning to~$1$ at $n = n_{\max}$.
+      The depth proxy is not the correct velocity coordinate.
+
+  \subsection{Interpretation}
+
+  No natural BFS observable satisfies the quadratic law $B_n^2+(\Sigma_n^\tau)^2
+  \to 1$ with $B_n = (2n^2+2n+1)/q^2$.
+  The failure modes are structurally distinct:
+  $\Sigma_n^A$ saturates too fast (scaling mismatch);
+  $\Sigma_n^B$ satisfies a linear-square law, not a fully quadratic one;
+  $\Sigma_n^C$ is close but biased in the high-$\beta$ regime.
+
+  This confirms that $\mathcal{P}_\tau^{\mathrm{Q5b}}$ cannot be replaced by
+  any simple function of the BFS cascade observables.
+  The temporal projection must be extracted from the capacity functional at the
+  level of the Q5b completed co-metric, as stated in
+  Definition~\ref{def:q5b-temporal-projection}.
+  Constructing this projection explicitly from Q5b~\S3--4 is the remaining
+  open task.
 
   \section{Consequence for the Lorentz factor}
-    \label{sec:consequence}
+  \label{sec:consequence}
 
-    \begin{theorem}[Lorentz factor as residual projective capacity]
-      \label{thm:lorentz}
-      Assume the Born--Infeld mobility budget of Section~\ref{sec:bi} and the
-      convergence of Lemma~\ref{lem:main}.
-      Then the O7 saturation parameter satisfies
-      \[
-        \eta_n^{\mathrm{O7}}
-        =
-        \frac{B_n}{\Sigma_n}
-        \longrightarrow
-        \frac{\beta}{\sqrt{1-\beta^2}}
-        =
-        \beta\gamma,
-      \]
-      and therefore the O-series saturation profile satisfies
-      \[
-        \Phi\!\left(\eta_n^{\mathrm{O7}}\right)
-        =
-        \frac{1}{\sqrt{1+\left(\eta_n^{\mathrm{O7}}\right)^2}}
-        \longrightarrow
-        \frac{1}{\gamma}.
-      \]
-    \end{theorem}
+  \begin{theorem}[Lorentz factor from O7 residual capacity, conditional on Lemma~\ref{lem:main}]
+    \label{thm:lorentz}
+    Assume the Born--Infeld mobility budget of Section~\ref{sec:bi} and the
+    convergence of Lemma~\ref{lem:main}.
+    Define the temporally projected saturation parameter
+    \[
+      \eta_n^\tau := \frac{B_n}{\Sigma_n^\tau}
+      = \frac{B_n}{\mathcal{P}_\tau^{\mathrm{Q5b}}\,\Sigma_n^{\mathrm{tot}}}.
+    \]
+    Then
+    \[
+      \eta_n^\tau
+      \longrightarrow
+      \frac{\beta}{\sqrt{1-\beta^2}}
+      =
+      \beta\gamma,
+    \]
+    and therefore the O-series profile with temporal projection satisfies
+    \[
+      \Phi\!\left(\eta_n^\tau\right)
+      =
+      \frac{1}{\sqrt{1+\left(\eta_n^\tau\right)^2}}
+      \longrightarrow
+      \frac{1}{\gamma}.
+    \]
+  \end{theorem}
 
-    The special-relativistic residual factor is thus recovered from the O7
-    occupied-over-residual capacity ratio, provided the Q5b continuum geometry
-    upgrades the reduced linear filling law to the quadratic Born--Infeld residual
-    law.
-    The Lorentz factor is not added as an external kinematical postulate.
-    It is the effective reading of residual temporal capacity in a bounded
-    projective budget.
+  The special-relativistic residual factor is recovered from the temporally
+  projected O7 ratio $B_n/\Sigma_n^\tau$.
+  The O7 total ratio $\eta_n^{\mathrm{O7}} = B_n/\Sigma_n^{\mathrm{tot}}$ satisfies
+  the linear law and does not directly yield the Lorentz factor; the Q5b temporal
+  projection is the essential intermediate step.
 
-    \begin{remark}[Saturation pressure at $v \to c$]
-      Under the identification $\eta_n^{\mathrm{O7}} \to \beta\gamma$, the O7 saturation
-      pressure $P_n^{\mathrm{sat}} = \gamma\,\eta_n$ satisfies
-      $P_n^{\mathrm{sat}} \to \beta\gamma^2$, which diverges as $v \to c$.
-      This is consistent with the light cone reading $dI_\tau = 0 \Leftrightarrow v = c$:
-      the budget is fully consumed by spatial mobility and no temporal residual
-      remains.
-    \end{remark}
+  \begin{remark}[Projected saturation pressure at $v \to c$]
+For the temporally projected analogue $P_{n,\tau}^{\mathrm{sat}} := \gamma\,\eta_n^\tau$,
+one obtains $P_{n,\tau}^{\mathrm{sat}} \to \beta\gamma^2$ under $\eta_n^\tau \to \beta\gamma$,
+which diverges as $v \to c$.
+This is consistent with the light cone reading $dI_\tau = 0 \Leftrightarrow v = c$:
+the budget is fully consumed by spatial mobility and no temporal residual remains.
+Note that the O7 total pressure $P_n^{\mathrm{sat}} = \gamma\,\eta_n^{\mathrm{O7}}$
+satisfies the linear law and does not exhibit this divergence directly.
+  \end{remark}
 
-    \begin{remark}[Scope]
-      Theorem~\ref{thm:lorentz} directly yields time dilation
-      ($d\tau/dn = 1/\gamma$) and the light cone ($dI_\tau = 0 \Leftrightarrow v = c$).
-      Length contraction requires the additional reconstruction of effective Lorentz
-      transformations between inertial observers.
-      The extension to general relativity follows from the non-uniform regime: when
-      localised configurations modify the local spectral budget, the position-dependent
-      metric $g_{\mu\nu}(x)$ encodes gravitational time dilation as a comparison of
-      residual temporal capacities along distinct projected histories.
-    \end{remark}
+  \begin{remark}[Scope]
+Theorem~\ref{thm:lorentz} directly yields time dilation
+($d\tau/dn = 1/\gamma$) and the light cone ($dI_\tau = 0 \Leftrightarrow v = c$).
+Length contraction requires the additional reconstruction of effective Lorentz
+transformations between inertial observers.
+The extension to general relativity is expected to proceed through the non-uniform regime: when
+localised configurations modify the local spectral budget, the position-dependent
+metric $g_{\mu\nu}(x)$ encodes gravitational time dilation as a comparison of
+residual temporal capacities along distinct projected histories.
+  \end{remark}
 
-    \bibliographystyle{plain}
-    \bibliography{cosmochrony-bibliography}
+  \bibliographystyle{plain}
+  \bibliography{cosmochrony-bibliography}
 
 \end{document}
