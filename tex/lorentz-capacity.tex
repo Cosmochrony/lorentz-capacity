@@ -1,0 +1,282 @@
+% Technical note: O7 saturation parameter and Lorentz factor from projective capacity.
+% Status: sections 1-3 established; section 4 contains the open convergence lemma
+% anchored to Q5b/Q11; section 5 is an algebraic corollary.
+% Dependencies: Beau2026a7 (O7), Beau2026q5b, Beau2026q11, Beau2026c (BI).
+
+\documentclass[11pt]{article}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
+\usepackage{doi}
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+
+\title{Spectral Mobility and the Lorentz Factor\\
+from Projective Capacity Saturation}
+\author{J\'er\^ome Beau}
+\date{2026}
+
+\begin{document}
+  \maketitle
+
+  \begin{abstract}
+    The O-series saturation parameter $\eta_n^{\mathrm{O7}}$ is defined in~\cite{Beau2026a7}
+    as the ratio of cumulative occupied projective capacity to residual frontier novelty.
+    We show that this ratio is not an arbitrary fitting variable: under the
+    Born--Infeld admissibility budget established in~\cite{Beau2026c}, a quadratic
+    normalization of the two capacity components implies
+    $\eta_n^{\mathrm{O7}} \to \beta\gamma$,
+    where $\beta\gamma$ is the relativistic mobility and $\gamma$ is the Lorentz factor.
+    Consequently, the O-series profile $\Phi(\eta) = 1/\sqrt{1+\eta^2}$ converges to
+    $1/\gamma$: the inverse Lorentz factor is the residual-capacity profile of the
+    admissible spectral cascade.
+    The quadratic normalization is not postulated; it is expected to follow from the
+    Carnot--Carath\'eodory continuum geometry and co-metric closure established
+    in~\cite{Beau2026q5b,Beau2026q11}.
+    The main convergence lemma, identifying the O7 observables as the normalized
+    components of the Born--Infeld budget, is stated precisely and left as the
+    remaining technical task.
+  \end{abstract}
+
+  \tableofcontents
+  \newpage
+
+  \section{O7 occupation and residual novelty}
+    \label{sec:o7}
+
+    The O7 saturation parameter is defined in~\cite{Beau2026a7} by
+    \[
+      \eta_n^{\mathrm{O7}}(x)
+      =
+      \frac{B_n(x)}{\Sigma_n(x)},
+      \qquad
+      B_n(x) := |\psi_n(x)|^2
+      =
+      \frac{|S_n \cap C_x|}{|C_x|}.
+    \]
+    Here $C_x$ is the effective resolution cell associated with the observable state $x$,
+    and $S_n$ is the BFS-reachable set up to cascade depth $n$.
+
+    The observable $B_n(x)$ is cumulative.
+    It measures the fraction of the cell $C_x$ already reached by the BFS cascade by
+    depth $n$.
+    In particular,
+    \[
+      0 \leq B_n(x) \leq 1,
+      \qquad
+      B_{n+1}(x) \geq B_n(x).
+    \]
+    It is therefore an occupation observable, not an infinitesimal mobility.
+
+    By contrast, $\Sigma_n(x)$ measures the average effective novelty contributed by
+    the BFS frontier at depth $n$: the mean fraction of genuinely new projective
+    direction brought by admissible paths reaching $\partial S_n$ within $C_x$.
+    It is a residual frontier observable, instantaneous and non-increasing in $n$.
+
+    The ratio $\eta_n^{\mathrm{O7}}$ is therefore not a fitting parameter.
+    It is an occupied-over-residual capacity ratio:
+    \[
+      \eta_n^{\mathrm{O7}}
+      =
+      \frac{\text{cumulative occupied capacity}}{\text{residual frontier novelty}}.
+    \]
+
+    The question addressed in this note is whether this O7 ratio converges, in the
+    continuum geometric limit, to the relativistic mobility ratio $dI_{\mathrm{space}}/dI_\tau$.
+
+  \section{Algebraic Born--Infeld target}
+    \label{sec:bi}
+
+    The cascade depth $n$ is not a time coordinate.
+    It is the ordinal depth of an admissible projective history, counting the number of
+    distinguishable projective transitions undergone along that history~\cite{Beau2026c}.
+
+    Assume a bounded Born--Infeld mobility budget at each projective depth
+    increment $dn$:
+    \[
+      dI_\tau^2 + dI_{\mathrm{space}}^2 = c_{\mathrm{BI}}^2\,dn^2.
+    \]
+    Define the normalized spectral mobility
+    \[
+      \beta := \frac{dI_{\mathrm{space}}}{c_{\mathrm{BI}}\,dn}.
+    \]
+    Then the residual temporal component is
+    \[
+      dI_\tau = c_{\mathrm{BI}}\sqrt{1-\beta^2}\,dn,
+    \]
+    and therefore
+    \[
+      \frac{dI_{\mathrm{space}}}{dI_\tau}
+      =
+      \frac{\beta}{\sqrt{1-\beta^2}}
+      =
+      \beta\gamma,
+      \qquad
+      \gamma := \frac{1}{\sqrt{1-\beta^2}}.
+    \]
+    If a spectral saturation parameter $\eta$ satisfies $\eta = dI_{\mathrm{space}}/dI_\tau$, then
+    \[
+      \Phi(\eta) = \frac{1}{\sqrt{1+\eta^2}} = \frac{1}{\gamma}.
+    \]
+    The inverse Lorentz factor is the residual-capacity profile of a quadratic
+    Born--Infeld budget.
+    This step is purely algebraic.
+    The non-trivial question is whether the O7 observables $B_n$ and $\Sigma_n$
+    converge to the two normalized components of this budget.
+
+  \section{Why the reduced filling model is insufficient}
+    \label{sec:linear}
+
+    The reduced filling model of~\cite{Beau2026a7} gives, before geometric correction,
+    \[
+      B_n \simeq \frac{n}{D},
+      \qquad
+      \Sigma_n \simeq 1 - \frac{n}{D},
+    \]
+    equivalently $B_n + \Sigma_n \simeq 1$.
+    This is a linear residual law.
+    It describes monotone filling of a finite resolution cell but does not produce
+    the Lorentzian residual factor.
+    Indeed, setting $B_n \to \beta$ in the linear model would give
+    $\Sigma_n \to 1-\beta$,
+    whereas the Born--Infeld mobility budget requires $\Sigma_n \to \sqrt{1-\beta^2}$.
+
+    The linear filling model therefore captures the monotone occupation mechanism
+    but not the continuum geometric correction responsible for the Lorentzian
+    square root.
+    The required structure is the quadratic residual law
+    \[
+      B_n^2 + \Sigma_n^2 \to 1.
+    \]
+    Under the identification $B_n \to \beta$, this gives $\Sigma_n \to \sqrt{1-\beta^2}$.
+
+  \section{From linear filling to quadratic normalization via Q5b}
+    \label{sec:q5b}
+
+    \subsection{Q5b input}
+
+      The reduced filling model operates at the combinatorial level of a finite
+      resolution cell.
+      The Q5b continuum limit supplies the missing geometric structure~\cite{Beau2026q5b}.
+
+      In the pre-saturation large-$q$ regime, BFS shells on
+      $\operatorname{Heis}_3(\mathbb{Z}/q\mathbb{Z})$ converge to
+      Carnot--Carath\'eodory balls on $\operatorname{Heis}_3(\mathbb{R})$.
+      The linear residual law of the reduced model is a coarse filling approximation
+      valid at finite $D$ and finite $q$; it does not encode the sub-Riemannian
+      anisotropy of the CC geometry.
+
+      The effective co-metric extracted from the completed principal-symbol geometry
+      of the admissibility operator is Lorentzian in the homogeneous regime.
+      After the Q11 co-metric closure~\cite{Beau2026q11}, the normalized co-metric is
+      \[
+        g^{\mu\nu} = 2\,\eta^{\mu\nu}, \qquad \eta = \mathrm{diag}(-1,+1,+1,+1),
+      \]
+      with no free parameter.
+      This Lorentzian structure imposes a quadratic normalization on the effective
+      admissible components in the continuum limit — replacing the linear complement
+      of the reduced filling model.
+
+      The chain is therefore:
+      \begin{align*}
+        &\text{CC convergence (Q5b)} &&\Rightarrow&&
+        \text{continuum spatial and temporal components exist,}\\
+        &\text{principal symbol / Q11 closure} &&\Rightarrow&&
+        \text{quadratic normalization of effective components,}\\
+        &\text{observable identification (Lemma~\ref{lem:main})} &&\Rightarrow&&
+        B_n^2 + \Sigma_n^2 \to 1.
+      \end{align*}
+      The geometric structure is not postulated; it comes from Q5b and Q11.
+      The remaining task is the third step: showing that the O7 observables $B_n$
+      and $\Sigma_n$ are precisely the normalized projections of the spatially occupied
+      and temporally residual components of the continuum budget.
+
+    \subsection{Main convergence lemma}
+
+      \begin{lemma}[O7 observables as normalized CC budget components]
+        \label{lem:main}
+        Let $B_n(x) := |\psi_n(x)|^2 = |S_n \cap C_x|/|C_x|$ be the O7 cumulative
+        occupation observable, and let $\Sigma_n(x)$ be the O7 residual frontier
+        novelty~\cite{Beau2026a7}.
+        In the pre-saturation large-$q$ regime, under the Q5b BFS-to-CC convergence
+        and the Q11 homogeneous co-metric closure, these observables converge to the
+        normalized spatial and temporal components of the Born--Infeld mobility budget:
+        \[
+          B_n \longrightarrow \beta,
+          \qquad
+          \Sigma_n \longrightarrow \sqrt{1-\beta^2},
+        \]
+        where $\beta = v_{\mathrm{eff}}/c_{\mathrm{BI}}$ is the normalized projected spectral mobility.
+        Equivalently,
+        \[
+          B_n^2 + \Sigma_n^2 \longrightarrow 1.
+        \]
+      \end{lemma}
+
+      The remaining work is the observable-identification step.
+      Q5b provides the continuum quadratic geometry.
+      O7 provides the occupied-over-residual observables.
+      The lemma asserts that these two descriptions refer to the same normalized
+      capacity components in the common large-$q$, pre-saturation regime.
+
+  \section{Consequence for the Lorentz factor}
+    \label{sec:consequence}
+
+    \begin{theorem}[Lorentz factor as residual projective capacity]
+      \label{thm:lorentz}
+      Assume the Born--Infeld mobility budget of Section~\ref{sec:bi} and the
+      convergence of Lemma~\ref{lem:main}.
+      Then the O7 saturation parameter satisfies
+      \[
+        \eta_n^{\mathrm{O7}}
+        =
+        \frac{B_n}{\Sigma_n}
+        \longrightarrow
+        \frac{\beta}{\sqrt{1-\beta^2}}
+        =
+        \beta\gamma,
+      \]
+      and therefore the O-series saturation profile satisfies
+      \[
+        \Phi\!\left(\eta_n^{\mathrm{O7}}\right)
+        =
+        \frac{1}{\sqrt{1+\left(\eta_n^{\mathrm{O7}}\right)^2}}
+        \longrightarrow
+        \frac{1}{\gamma}.
+      \]
+    \end{theorem}
+
+    The special-relativistic residual factor is thus recovered from the O7
+    occupied-over-residual capacity ratio, provided the Q5b continuum geometry
+    upgrades the reduced linear filling law to the quadratic Born--Infeld residual
+    law.
+    The Lorentz factor is not added as an external kinematical postulate.
+    It is the effective reading of residual temporal capacity in a bounded
+    projective budget.
+
+    \begin{remark}[Saturation pressure at $v \to c$]
+      Under the identification $\eta_n^{\mathrm{O7}} \to \beta\gamma$, the O7 saturation
+      pressure $P_n^{\mathrm{sat}} = \gamma\,\eta_n$ satisfies
+      $P_n^{\mathrm{sat}} \to \beta\gamma^2$, which diverges as $v \to c$.
+      This is consistent with the light cone reading $dI_\tau = 0 \Leftrightarrow v = c$:
+      the budget is fully consumed by spatial mobility and no temporal residual
+      remains.
+    \end{remark}
+
+    \begin{remark}[Scope]
+      Theorem~\ref{thm:lorentz} directly yields time dilation
+      ($d\tau/dn = 1/\gamma$) and the light cone ($dI_\tau = 0 \Leftrightarrow v = c$).
+      Length contraction requires the additional reconstruction of effective Lorentz
+      transformations between inertial observers.
+      The extension to general relativity follows from the non-uniform regime: when
+      localised configurations modify the local spectral budget, the position-dependent
+      metric $g_{\mu\nu}(x)$ encodes gravitational time dilation as a comparison of
+      residual temporal capacities along distinct projected histories.
+    \end{remark}
+
+    \bibliographystyle{plain}
+    \bibliography{cosmochrony-bibliography}
+
+\end{document}
