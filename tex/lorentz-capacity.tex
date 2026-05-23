@@ -1,5 +1,5 @@
 % Technical note: O7 saturation parameter and Lorentz factor from projective capacity.
-% Status: sections 1-3 established; section 4 contains the open convergence lemma
+% Status: sections 1-3 established; section 4 convergence lemma resolved in~\cite{Beau2026tp}
 % anchored to Q5b/Q11; section 5 proves the linear law analytically; section 6 is a conditional corollary.
 % Dependencies: Beau2026a11 (O7), Beau2026q5b, Beau2026q11, Beau2026c (BI).
 
@@ -12,6 +12,8 @@
 \newtheorem{theorem}{Theorem}
 \newtheorem{corollary}{Corollary}
 \newtheorem{remark}{Remark}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
 
 \title{Spectral Mobility and the Lorentz Factor\\
 from Projective Capacity Saturation}
@@ -473,8 +475,7 @@ from Projective Capacity Saturation}
   The temporal projection must be extracted from the capacity functional at the
   level of the Q5b completed co-metric, as stated in
   Definition~\ref{def:q5b-temporal-projection}.
-  Constructing this projection explicitly from Q5b~\S3--4 is the remaining
-  open task.
+  This projection is constructed explicitly in~\cite{Beau2026tp}.
 
   \section{Consequence for the Lorentz factor}
   \label{sec:consequence}
@@ -525,12 +526,12 @@ satisfies the linear law and does not exhibit this divergence directly.
   \begin{remark}[Scope]
 Theorem~\ref{thm:lorentz} directly yields time dilation
 ($d\tau/dn = 1/\gamma$) and the light cone ($dI_\tau = 0 \Leftrightarrow v = c$).
-Length contraction requires the additional reconstruction of effective Lorentz
-transformations between inertial observers.
-The extension to general relativity is expected to proceed through the non-uniform regime: when
-localised configurations modify the local spectral budget, the position-dependent
-metric $g_{\mu\nu}(x)$ encodes gravitational time dilation as a comparison of
-residual temporal capacities along distinct projected histories.
+Length contraction and the reconstruction of full Lorentz transformations between
+inertial observers are addressed in~\cite{Beau2026lco1}.
+The non-uniform regime, in which position-dependent modifications of the local
+spectral budget encode gravitational time dilation, is addressed in~\cite{Beau2026lco2o1},
+where the capacity--metric bridge $R(x)^2 = 1-\epsilon(x) = -2g^{\tau\tau}(x)$
+is established from local admissibility data without importing the Einstein equation.
   \end{remark}
 
   \bibliographystyle{plain}
