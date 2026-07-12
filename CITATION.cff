@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you cite this work, please use the metadata from this file."
+title: "Spectral Mobility and the Lorentz Factor from Projective Capacity Saturation"
+type: software
+authors:
+  - family-names: "Beau"
+    given-names: "Jérôme"
+repository-code: "https://github.com/Cosmochrony/lorentz-capacity"
+url: "https://cosmochrony.org/science/lc/lorentz-capacity/"
+doi: "10.5281/zenodo.20299014"
+license: "CC-BY-4.0"
+preferred-citation:
+  type: article
+  title: "Spectral Mobility and the Lorentz Factor from Projective Capacity Saturation"
+  authors:
+    - family-names: "Beau"
+      given-names: "Jérôme"
+  year: 2026
+  doi: "10.5281/zenodo.20299014"
+  url: "https://doi.org/10.5281/zenodo.20299014"
