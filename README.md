@@ -1,7 +1,7 @@
 # lorentz-capacity
 
 This repository contains the source of the technical note
-[Spectral Mobility and the Lorentz Factor from Projective Capacity Saturation](out/lorentz-capacity.pdf).
+Spectral Mobility and the Lorentz Factor from Projective Capacity Saturation.
 
 This note establishes that the O7 saturation parameter $\eta_n^{\mathrm{O7}}$, defined
 as the ratio of cumulative occupied projective capacity to residual frontier novelty,
@@ -81,7 +81,6 @@ Output: `out/lorentz-capacity.pdf`
 
 ## Links
 
-- Paper PDF: [out/lorentz-capacity.pdf](out/lorentz-capacity.pdf)
 - Website: [cosmochrony.org](https://cosmochrony.org)
 
 ## Citation
