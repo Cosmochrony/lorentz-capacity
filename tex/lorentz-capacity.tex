@@ -24,7 +24,7 @@ from Projective Capacity Saturation}
   \maketitle
 
   \begin{abstract}
-    The O-series saturation parameter $\eta_n^{\mathrm{O7}}$ is defined in~\cite{Beau2026a11}
+    The O7 saturation parameter $\eta_n^{\mathrm{O7}}$ is defined
     as the ratio of cumulative occupied projective capacity to total residual frontier novelty.
     The analytic factorization proved below explains why this total
     ratio satisfies a linear filling law $B_n + \Sigma_n^{\mathrm{tot}} = 1$ and does not
@@ -35,7 +35,7 @@ from Projective Capacity Saturation}
     $\Sigma_n^\tau := \mathcal{P}_\tau^{\mathrm{Q5b}}\,\Sigma_n^{\mathrm{tot}}$
     can produce the relativistic mobility ratio: under the
     quadratic mobility budget assumed in Section~\ref{sec:bi}, which expresses the
-    capacity bound of~\cite{Beau2026c}, a quadratic
+    Born--Infeld capacity bound, a quadratic
     normalization of $B_n$ and $\Sigma_n^\tau$ implies
     \[
       \eta_n^\tau := \frac{B_n}{\Sigma_n^\tau} \longrightarrow \beta\gamma,
@@ -43,10 +43,17 @@ from Projective Capacity Saturation}
     where $\beta\gamma$ is the relativistic mobility and $\gamma$ is the Lorentz factor.
     Consequently, $\Phi(\eta_n^\tau) = 1/\sqrt{1+(\eta_n^\tau)^2}$ converges to $1/\gamma$.
     The temporal projection operator $\mathcal{P}_\tau^{\mathrm{Q5b}}$ is induced by the
-    Carnot--Carath\'eodory geometry and co-metric closure of~\cite{Beau2026q5b,Beau2026q11}.
+    completed Q5b--Q11 geometry.
     Constructing this operator and verifying $\mathcal{P}_\tau^{\mathrm{Q5b}}\Sigma_n^{\mathrm{tot}}
     \to \sqrt{1-B_n^2}$ is the remaining technical task.
+    \textbf{Interpretive reading.}
+    The conditional construction treats the Lorentz factor as a residual of a bounded mobility
+    budget rather than as a primitive kinematic input.
   \end{abstract}
+
+  \noindent\textbf{Keywords.}
+  spectral mobility, Lorentz factor, projective capacity, temporal residual,
+  Born--Infeld capacity, Weil representation, Heisenberg group, Cosmochrony.
 
   \tableofcontents
   \newpage
@@ -215,11 +222,12 @@ from Projective Capacity Saturation}
 
     The chain is therefore:
     \begin{align*}
-      &\text{CC convergence (Q5b)} &&\Rightarrow&&
-      \text{continuum spatial and temporal components exist,}\\
-      &\text{principal symbol / Q11 closure} &&\Rightarrow&&
-      \text{temporal projection operator } \mathcal{P}_\tau^{\mathrm{Q5b}} \text{ defined,}\\
-      &\text{Lemma~\ref{lem:main}} &&\Rightarrow&&
+      \text{Q5b convergence}
+      &\Rightarrow \text{continuum components},\\
+      \text{Q11 closure}
+      &\Rightarrow \mathcal{P}_\tau^{\mathrm{Q5b}},\\
+      \text{Lemma~\ref{lem:main}}
+      &\Rightarrow
       B_n^2 + (\mathcal{P}_\tau^{\mathrm{Q5b}}\Sigma_n^{\mathrm{tot}})^2 \to 1.
     \end{align*}
     The geometric structure is not postulated; it comes from Q5b and Q11.
@@ -246,13 +254,12 @@ from Projective Capacity Saturation}
 
       The direction identified as \emph{temporal} here is temporal only after the chain
       \[
-        \text{Carnot structure}
-        \;\to\;
-        \text{symbol completion}
-        \;\to\;
-        \text{Q11 co-metric closure}
-        \;\to\;
-        g^{\mu\nu} = 2\,\eta^{\mu\nu}.
+        \begin{aligned}
+          \text{Carnot structure}
+          &\to \text{symbol completion}\\
+          &\to \text{Q11 closure}
+          \to g^{\mu\nu} = 2\,\eta^{\mu\nu}.
+        \end{aligned}
       \]
       $\mathcal{P}_\tau^{\mathrm{Q5b}}$ is therefore \emph{not} the naive projector
       onto the central direction of the sub-Laplacian $\Delta_H$; the central
@@ -260,7 +267,7 @@ from Projective Capacity Saturation}
       and becomes a metric temporal direction only after co-metric completion.
     \end{definition}
 
-    \begin{lemma}[Quadratic residual component]
+    \begin{lemma}[Quadratic residual]
       \label{lem:main}
       In the homogeneous pre-saturation regime, let $B_n(x) := |\psi_n(x)|^2$
       be the O7 cumulative occupation observable and $\Sigma_n^{\mathrm{tot}}(x)$
@@ -345,12 +352,16 @@ from Projective Capacity Saturation}
       On $\operatorname{Heis}_3(\mathbb{Z}/q\mathbb{Z})$ with generators
       $\{(\pm1,0,0),(0,\pm1,0)\}$, the BFS explores the $L^1$ ball on
       $(\mathbb{Z}/q\mathbb{Z})^2$:
+      Define
       \[
-        B_n
-        =
-        \frac{|\{(a,b) : \min(a,q-a)+\min(b,q-b) \leq n\}|}{q^2}
-        =
-        \frac{2n^2+2n+1}{q^2}
+        N_n
+        :=
+        |\{(a,b) : \min(a,q-a)+\min(b,q-b) \leq n\}|.
+      \]
+      Then
+      \[
+        B_n=\frac{N_n}{q^2}
+        =\frac{2n^2+2n+1}{q^2}
         \quad (n < q/2),
       \]
       and the total residual novelty satisfies:
@@ -373,13 +384,12 @@ from Projective Capacity Saturation}
     horizontal generators.
     It becomes a metric temporal direction only after the symbol completion chain
     \[
-      \text{CC structure}
-      \;\to\;
-      \text{sub-principal symbol correction}
-      \;\to\;
-      \text{Q11 co-metric closure}
-      \;\to\;
-      g^{\mu\nu} = 2\,\eta^{\mu\nu}.
+      \begin{aligned}
+        \text{CC structure}
+        &\to \text{sub-principal correction}\\
+        &\to \text{Q11 closure}
+        \to g^{\mu\nu} = 2\,\eta^{\mu\nu}.
+      \end{aligned}
     \]
     Consequently, the projection $\mathcal{P}_\tau^{\mathrm{Q5b}}$ of
     Definition~\ref{def:q5b-temporal-projection} does \emph{not} act on the
@@ -485,7 +495,7 @@ from Projective Capacity Saturation}
   \section{Consequence for the Lorentz factor}
   \label{sec:consequence}
 
-  \begin{theorem}[Lorentz factor from O7 residual capacity, conditional on Lemma~\ref{lem:main}]
+  \begin{theorem}[Conditional Lorentz-factor limit]
     \label{thm:lorentz}
     Assume the Born--Infeld mobility budget of Section~\ref{sec:bi} and the
     convergence of Lemma~\ref{lem:main}.
@@ -535,9 +545,24 @@ Length contraction and the reconstruction of full Lorentz transformations betwee
 inertial observers are addressed in~\cite{Beau2026lco1}.
 The non-uniform regime, in which position-dependent modifications of the local
 spectral budget encode gravitational time dilation, is addressed in~\cite{Beau2026lco2o1},
-where the capacity--metric bridge $R(x)^2 = 1-\epsilon(x) = -2g^{\tau\tau}(x)$
-is established from local admissibility data without importing the Einstein equation.
+which proves that the scalar free-fraction law does not close the capacity--metric bridge
+between $R(x)^2 = 1-\epsilon(x)$ and $R(x)^2 = -2g_{\tau\tau}(x)$.
+The bridge therefore remains open.
   \end{remark}
+
+  \section{Conclusion}
+  \label{sec:conclusion}
+
+  Under the quadratic mobility-budget hypothesis and the temporal projection supplied by
+  TempProj, the projected O7 ratio converges to $\beta\gamma$ and its reciprocal mobility
+  profile converges to $1/\gamma$.
+  The result is conditional on the Born--Infeld capacity lift and does not derive the open
+  non-homogeneous capacity--metric identification.
+
+  \paragraph{Interpretive outlook.}
+  The established limit supports reading relativistic time dilation as the temporal residual of
+  a saturated projective capacity budget.
+  This interpretation does not turn the capacity sphere itself into a Lorentzian metric.
 
   \bibliographystyle{plain}
   \bibliography{cosmochrony-bibliography}
