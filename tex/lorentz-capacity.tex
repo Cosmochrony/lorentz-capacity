@@ -42,8 +42,13 @@ from Projective Capacity Saturation}
     \]
     where $\beta\gamma$ is the relativistic mobility and $\gamma$ is the Lorentz factor.
     Consequently, $\Phi(\eta_n^\tau) = 1/\sqrt{1+(\eta_n^\tau)^2}$ converges to $1/\gamma$.
-    The temporal projection operator $\mathcal{P}_\tau^{\mathrm{Q5b}}$ is induced by the
-    completed Q5b--Q11 geometry.
+    The temporal projection operator $\mathcal{P}_\tau^{\mathrm{Q5b}}$ is induced by a supplied completed
+    co-metric of the conditional form of Q11, $\mathrm{diag}(-A_\tau, 2\lambda, 2\lambda, 2\lambda)$, whose two
+    coefficients are independent and fixed by no source; it uses the signature and the decoupled temporal block,
+    and the normalisation $g^{\mu\nu} = 2\eta^{\mu\nu}$ is a choice of units.
+    Reading $\beta$ as a velocity relative to the light cone of that co-metric requires the hypothesis [H-cone]
+    that the light-cone speed equals the Born--Infeld bound per ordering step, the coupling datum that Q11 leaves
+    open.
     Constructing this operator and verifying $\mathcal{P}_\tau^{\mathrm{Q5b}}\Sigma_n^{\mathrm{tot}}
     \to \sqrt{1-B_n^2}$ is the remaining technical task.
     \textbf{Interpretive reading.}
@@ -185,7 +190,7 @@ from Projective Capacity Saturation}
         \Sigma_n^\tau := \mathcal{P}_\tau^{\mathrm{Q5b}}\,\Sigma_n^{\mathrm{tot}},
       \]
       where $\mathcal{P}_\tau^{\mathrm{Q5b}}$ is the temporal residual projection
-      induced by the completed effective co-metric.
+      induced by a completed effective co-metric.
       The corrected quadratic target is
       \[
         B_n^2 + (\Sigma_n^\tau)^2 \longrightarrow 1.
@@ -207,14 +212,22 @@ from Projective Capacity Saturation}
     valid at finite $D$ and finite $q$; it does not encode the sub-Riemannian
     anisotropy of the CC geometry.
 
-    The effective co-metric extracted from the completed principal-symbol geometry
-    of the admissibility operator is Lorentzian in the homogeneous regime.
-    Assuming the Q11 co-metric closure~\cite{Beau2026q11}, the normalized co-metric is
+    Under the spatial-limit hypothesis [H-L] and the lifting hypothesis [H-lift], Q5b obtains a co-metric of rank
+    three; its rank-four extension is open problem Q5b-O2, and no source constructs it.
+    For a supplied rank-four extension satisfying the hypotheses of Q11~\cite{Beau2026q11}, Corollary~6.1
+    ([H-L], [H-lift], [T] and [INV$^+$] of Q8~\cite{BeauQ8}, and invariance under [ACT$_\tau$] with a negative
+    ordering term), the co-metric is
     \[
-      g^{\mu\nu} = 2\,\eta^{\mu\nu}, \qquad \eta = \mathrm{diag}(-1,+1,+1,+1),
+      g^{\mu\nu} = \mathrm{diag}(-A_\tau,\, 2\lambda,\, 2\lambda,\, 2\lambda),
     \]
-    with no free parameter.
-    This Lorentzian structure provides the quadratic normalization in which the
+    with $A_\tau > 0$ and $\lambda > 0$ independent: Q8 leaves $\lambda$ free, Q10~\cite{Beau2026q10} derives no
+    coefficient value, and Q11 shows that spatial $\mathrm{SU}(2)$ invariance leaves $A_\tau$ free.
+    Its signature $(-,+,+,+)$ and the absence of mixed temporal--spatial terms are conditional on those
+    hypotheses.
+    The rescaling $\tau' = \tau\,(2\lambda/A_\tau)^{1/2}$ gives $2\lambda\,\eta^{\mu\nu}$, with
+    $\eta = \mathrm{diag}(-1,+1,+1,+1)$, and $\lambda = 1$ gives the normalisation
+    $g^{\mu\nu} = 2\,\eta^{\mu\nu}$, which is a choice of units and not a derived value.
+    Such a Lorentzian structure would provide the quadratic normalization in which the
     continuum admissible components are to be read, replacing the linear complement
     of the reduced filling model.
     The remaining task is to identify the O7 observables with these normalized
@@ -224,13 +237,14 @@ from Projective Capacity Saturation}
     \begin{align*}
       \text{Q5b convergence}
       &\Rightarrow \text{continuum components},\\
-      \text{Q11 closure}
+      \text{supplied co-metric (Q11, Cor.~6.1)}
       &\Rightarrow \mathcal{P}_\tau^{\mathrm{Q5b}},\\
       \text{Lemma~\ref{lem:main}}
       &\Rightarrow
       B_n^2 + (\mathcal{P}_\tau^{\mathrm{Q5b}}\Sigma_n^{\mathrm{tot}})^2 \to 1.
     \end{align*}
-    The geometric structure is not postulated; it comes from Q5b and Q11.
+    The rank-four co-metric is supplied, under the hypotheses of Q11 Corollary~6.1; Q5b and Q11 fix its form, not
+    its coefficients.
     The remaining task is to construct $\mathcal{P}_\tau^{\mathrm{Q5b}}$ explicitly
     and verify that the normalized temporal component extracted from
     $\Sigma_n^{\mathrm{tot}}$ converges to $\sqrt{1-B_n^2}$.
@@ -246,25 +260,18 @@ from Projective Capacity Saturation}
       \[
         \mathcal{P}_\tau^{\mathrm{Q5b}} : \Sigma_n^{\mathrm{tot}} \mapsto \Sigma_n^\tau
       \]
-      induced by the completed effective co-metric $g^{\mu\nu} = 2\,\eta^{\mu\nu}$
-      of~\cite{Beau2026q5b,Beau2026q11}.
+      induced by a supplied completed effective co-metric of the form of Q11 Corollary~6.1
+      (\cite{Beau2026q5b,Beau2026q11}); it depends only on the signature and the decoupled temporal block.
       It is defined by projecting the total residual admissible capacity onto the
       component orthogonal, in the completed Lorentzian co-metric, to the occupied
       spatial component $B_n$.
 
-      The direction identified as \emph{temporal} here is temporal only after the chain
-      \[
-        \begin{aligned}
-          \text{Carnot structure}
-          &\to \text{symbol completion}\\
-          &\to \text{Q11 closure}
-          \to g^{\mu\nu} = 2\,\eta^{\mu\nu}.
-        \end{aligned}
-      \]
-      $\mathcal{P}_\tau^{\mathrm{Q5b}}$ is therefore \emph{not} the naive projector
-      onto the central direction of the sub-Laplacian $\Delta_H$; the central
-      direction $Z$ appears at sub-principal / Carnot degree~2 via $[X,Y]=Z$,
-      and becomes a metric temporal direction only after co-metric completion.
+      The direction identified as \emph{temporal} here is the ordering factor $\mathbb{R}_\tau$, not a
+      direction of $\mathrm{Heis}_3(\mathbb{R})$.
+      $\mathcal{P}_\tau^{\mathrm{Q5b}}$ is therefore \emph{not} a projector onto the central direction of the
+      sub-Laplacian $\Delta_H$: the central direction $Z$, which appears at Carnot degree~2 via $[X,Y]=Z$, is a
+      spatial direction whose coefficient is the empty central slot of the rank-three co-metric (open problem
+      Q5b-O2), and Q8 shows that the commutator does not supply that coefficient.
     \end{definition}
 
     \begin{lemma}[Quadratic residual]
@@ -293,8 +300,9 @@ from Projective Capacity Saturation}
       \[
         \beta := \frac{dI_{\mathrm{space}}}{c_{\mathrm{BI}}\,dn}
       \]
-      is the normalized spectral mobility, represented after physical normalization
-      $c_{\mathrm{BI}} \mapsto c$ as $v_{\mathrm{eff}}/c$.
+      is the normalized spectral mobility.
+      Its reading as $v_{\mathrm{eff}}/c$, a velocity in units of the light-cone speed of the co-metric, requires
+      the hypothesis [H-cone] of Section~\ref{sec:consequence}.
     \end{lemma}
 
     The remaining work follows the decomposition chain:
@@ -302,11 +310,11 @@ from Projective Capacity Saturation}
       &\Sigma_n^{\mathrm{tot}} \quad \text{(O7 total residual)}\\
       &\quad \downarrow \quad \text{Q5b decomposition of admissible components}\\
       &\Sigma_n^{\mathrm{tot}} = \Sigma_n^{\mathrm{spat}} \oplus \Sigma_n^\tau\\
-      &\quad \downarrow \quad \text{BI/Q11 normalization}\\
+      &\quad \downarrow \quad \text{BI normalization}\\
       &B_n^2 + (\Sigma_n^\tau)^2 \to 1.
     \end{align*}
-    This is an identification between the O7 total observable and the Q5b/Q11
-    geometric decomposition, not a new geometric conjecture.
+    This is an identification between the O7 total observable and the decomposition induced by a supplied
+    co-metric; TempProj~\cite{Beau2026tp} establishes it under the hypotheses stated there.
 
   \section{Weil factorization and the invisibility of the central direction}
   \label{sec:weil-factorization}
@@ -377,20 +385,12 @@ from Projective Capacity Saturation}
 
   \subsection{Why this does not obstruct the Lorentz identification}
 
-    The factorization shows that the temporal direction required by the Lorentz
-    identification is \emph{not} directly visible in the Schr\"odinger representation.
-    This is expected: in Carnot--Carath\'eodory geometry, the central direction $Z$
-    appears at degree~2 via the bracket $[X,Y] = Z$, not at degree~1 alongside the
-    horizontal generators.
-    It becomes a metric temporal direction only after the symbol completion chain
-    \[
-      \begin{aligned}
-        \text{CC structure}
-        &\to \text{sub-principal correction}\\
-        &\to \text{Q11 closure}
-        \to g^{\mu\nu} = 2\,\eta^{\mu\nu}.
-      \end{aligned}
-    \]
+    The factorization shows that the central coordinate is invisible to the fingerprint span.
+    This does not remove the temporal direction required by the Lorentz identification, because that direction is
+    not the central direction $Z$ of $\mathrm{Heis}_3$: $Z$ is spatial, appearing at Carnot degree~2 via the bracket
+    $[X,Y] = Z$.
+    The temporal direction is the ordering factor $\mathbb{R}_\tau$, on which a supplied completed co-metric of the
+    form of Q11 Corollary~6.1 has a decoupled negative block.
     Consequently, the projection $\mathcal{P}_\tau^{\mathrm{Q5b}}$ of
     Definition~\ref{def:q5b-temporal-projection} does \emph{not} act on the
     Schr\"odinger representation space $\mathbb{C}^q$ directly.
@@ -490,10 +490,26 @@ from Projective Capacity Saturation}
   The temporal projection must be extracted from the capacity functional at the
   level of the Q5b completed co-metric, as stated in
   Definition~\ref{def:q5b-temporal-projection}.
-  This projection is constructed explicitly in~\cite{Beau2026tp}.
+  This projection is constructed in~\cite{Beau2026tp}, under the hypotheses stated there.
 
   \section{Consequence for the Lorentz factor}
   \label{sec:consequence}
+
+  The mobility $\beta$ of Section~\ref{sec:bi} is normalised by $c_{\mathrm{BI}}$ per depth step, whereas a
+  co-metric $\mathrm{diag}(-A_\tau, 2\lambda, 2\lambda, 2\lambda)$ has its own light-cone speed
+  $(2\lambda/A_\tau)^{1/2}$.
+  Reading $\beta$ as a velocity relative to that light cone, and $\gamma$ as the Lorentz factor of an observer,
+  requires the following hypothesis.
+  \begin{itemize}
+    \item[{[H-cone]}] \emph{Cone--capacity identification.}
+    The light-cone speed of the co-metric equals the Born--Infeld bound per ordering step; equivalently, in the
+    rescaled coordinate $\tau'$ in which the co-metric is proportional to $\eta$, $\beta$ is the coordinate
+    velocity of the observer it labels.
+  \end{itemize}
+  [H-cone] is the datum coupling the temporal and spatial normalisations that Q11~\cite{Beau2026q11} names as
+  missing (open problem Q11-O1); it is not derived here or in any source.
+  Theorem~\ref{thm:lorentz} below is an algebraic statement about $\beta$ and does not use it; its kinematic
+  reading does.
 
   \begin{theorem}[Conditional Lorentz-factor limit]
     \label{thm:lorentz}
@@ -531,22 +547,23 @@ from Projective Capacity Saturation}
   \begin{remark}[Projected saturation pressure at $v \to c$]
 For the temporally projected analogue $P_{n,\tau}^{\mathrm{sat}} := \gamma\,\eta_n^\tau$,
 one obtains $P_{n,\tau}^{\mathrm{sat}} \to \beta\gamma^2$ under $\eta_n^\tau \to \beta\gamma$,
-which diverges as $v \to c$.
-This is consistent with the light cone reading $dI_\tau = 0 \Leftrightarrow v = c$:
+which diverges as $\beta \to 1$.
+Under [H-cone] this is the light-cone reading $dI_\tau = 0 \Leftrightarrow v = c$:
 the budget is fully consumed by spatial mobility and no temporal residual remains.
 Note that the O7 total pressure $P_n^{\mathrm{sat}} = \gamma\,\eta_n^{\mathrm{O7}}$
 satisfies the linear law and does not exhibit this divergence directly.
   \end{remark}
 
   \begin{remark}[Scope]
-Theorem~\ref{thm:lorentz} directly yields time dilation
+Under [H-cone], Theorem~\ref{thm:lorentz} yields time dilation
 ($d\tau/dn = 1/\gamma$) and the light cone ($dI_\tau = 0 \Leftrightarrow v = c$).
 Length contraction and the reconstruction of full Lorentz transformations between
 inertial observers are addressed in~\cite{Beau2026lco1}.
 The non-uniform regime, in which position-dependent modifications of the local
 spectral budget encode gravitational time dilation, is addressed in~\cite{Beau2026lco2o1},
 which proves that the scalar free-fraction law does not close the capacity--metric bridge
-between $R(x)^2 = 1-\epsilon(x)$ and $R(x)^2 = -2g_{\tau\tau}(x)$.
+between $R(x)^2 = 1-\epsilon(x)$ and $R(x)^2 = g_{\tau\tau}(x)/g_{\tau\tau}^\infty$, whose flat-space reference
+value is postulated.
 The bridge therefore remains open.
   \end{remark}
 
@@ -556,11 +573,14 @@ The bridge therefore remains open.
   Under the quadratic mobility-budget hypothesis and the temporal projection supplied by
   TempProj, the projected O7 ratio converges to $\beta\gamma$ and its reciprocal mobility
   profile converges to $1/\gamma$.
-  The result is conditional on the Born--Infeld capacity lift and does not derive the open
-  non-homogeneous capacity--metric identification.
+  The result is conditional on the Born--Infeld capacity lift and on a supplied co-metric of the conditional form of
+  Q11, with two independent coefficients and no coefficient value used.
+  Its reading as relativistic time dilation requires [H-cone], the identification of the light-cone speed with the
+  Born--Infeld bound per ordering step, which no source derives.
+  It does not derive the open non-homogeneous capacity--metric identification.
 
   \paragraph{Interpretive outlook.}
-  The established limit supports reading relativistic time dilation as the temporal residual of
+  Under [H-cone], the established limit supports reading relativistic time dilation as the temporal residual of
   a saturated projective capacity budget.
   This interpretation does not turn the capacity sphere itself into a Lorentzian metric.
 
