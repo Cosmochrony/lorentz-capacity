@@ -34,7 +34,7 @@ from Projective Capacity Saturation}
     We identify the conditional mechanism by which a temporally projected residual
     $\Sigma_n^\tau := \mathcal{P}_\tau^{\mathrm{Q5b}}\,\Sigma_n^{\mathrm{tot}}$
     can produce the relativistic mobility ratio: under the
-    quadratic mobility budget assumed in Section~\ref{sec:bi}, which expresses the
+    quadratic mobility budget assumed in this note, which expresses the
     Born--Infeld capacity bound, a quadratic
     normalization of $B_n$ and $\Sigma_n^\tau$ implies
     \[
@@ -45,8 +45,8 @@ from Projective Capacity Saturation}
     The projection $\mathcal{P}_\tau^{\mathrm{Q5b}}$ is induced by a supplied co-metric of the conditional form of
     Q11, with two independent coefficients and no value used; reading $\beta$ as a velocity requires the hypothesis
     [H-cone] (light-cone speed equal to the Born--Infeld bound), the coupling datum that Q11 leaves open.
-    Constructing this operator and verifying $\mathcal{P}_\tau^{\mathrm{Q5b}}\Sigma_n^{\mathrm{tot}}
-    \to \sqrt{1-B_n^2}$ is the remaining technical task.
+    The operator and the convergence $\mathcal{P}_\tau^{\mathrm{Q5b}}\Sigma_n^{\mathrm{tot}}
+    \to \sqrt{1-B_n^2}$ are established in TempProj under its stated hypotheses.
     \textbf{Interpretive reading.}
     The conditional construction treats the Lorentz factor as a residual of a bounded mobility
     budget rather than as a primitive kinematic input.
@@ -241,9 +241,9 @@ from Projective Capacity Saturation}
     \end{align*}
     The rank-four co-metric is supplied, under the hypotheses of Q11 Corollary~6.1; Q5b and Q11 fix its form, not
     its coefficients.
-    The remaining task is to construct $\mathcal{P}_\tau^{\mathrm{Q5b}}$ explicitly
-    and verify that the normalized temporal component extracted from
-    $\Sigma_n^{\mathrm{tot}}$ converges to $\sqrt{1-B_n^2}$.
+    The construction of $\mathcal{P}_\tau^{\mathrm{Q5b}}$ and the convergence of the normalized temporal component
+    extracted from $\Sigma_n^{\mathrm{tot}}$ to $\sqrt{1-B_n^2}$ are established in~\cite{Beau2026tp}, under the
+    hypotheses stated there.
 
   \subsection{Main convergence lemma}
 
@@ -287,8 +287,8 @@ from Projective Capacity Saturation}
       \]
       induced by the completed co-metric separates the total residual into spatial
       and temporal components.
-      If the Q5b observable identification sends $B_n$ to the normalized spatial
-      component of the completed Born--Infeld budget, then
+      If $B_n$ is identified with the normalized spatial component of the completed Born--Infeld budget
+      (hypothesis (S) of~\cite{Beau2026tp}), then
       \[
         B_n^2 + (\Sigma_n^\tau)^2 \longrightarrow 1,
       \]
@@ -552,7 +552,8 @@ satisfies the linear law and does not exhibit this divergence directly.
 
   \begin{remark}[Scope]
 Under [H-cone], Theorem~\ref{thm:lorentz} yields time dilation
-($d\tau/dn = 1/\gamma$) and the light cone ($dI_\tau = 0 \Leftrightarrow v = c$).
+(the proper time of an observer at load $\beta$ advances at the rate $1/\gamma$ relative to the rescaled ordering
+coordinate) and the light cone ($dI_\tau = 0 \Leftrightarrow v = c$).
 Length contraction and the reconstruction of full Lorentz transformations between
 inertial observers are addressed in~\cite{Beau2026lco1}.
 The non-uniform regime, in which position-dependent modifications of the local

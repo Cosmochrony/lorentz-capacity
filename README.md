@@ -26,7 +26,7 @@ bound per ordering step), the coupling datum that Q11 leaves open.
 
 ## Structure
 
-The note is organized in five sections:
+The note is organized in seven sections:
 
 1. **O7 occupation and residual novelty** — definitions of $B_n$ (cumulative occupation)
    and $\Sigma_n$ (residual frontier novelty) and their ratio $\eta_n^{\mathrm{O7}}$.
